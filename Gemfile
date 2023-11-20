@@ -8,6 +8,13 @@ gem "rails", "~> 7.1.2"
 # Enable to protect our keys
 gem "dotenv-rails"
 
+# Enable using bootstrap
+gem "bootstrap", "~> 5.2"
+
+
+# Enable to link our project to cloundinary to store images
+gem "cloudinary"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -44,10 +51,12 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Permet de mettre en place et d'utiliser le log in / log out
+gem "devise"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
