@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :users do
-    resources :products, except: [:index]
+    resources :products, except: [:show]
     resources :bookings
   end
+  resources :products, only: [:show,]
 end
