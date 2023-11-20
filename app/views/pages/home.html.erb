@@ -1,5 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% @products.each do |product| %>
-  <%= product%>
-<% end %>
+<div class="container">
+  <h1>Pages#home</h1>
+  <h2>All our products</h2>
+  <% @products.each do |product| %>
+  <div class="shadow-sm border rounded col-4 p-2 mb-2">
+    <p>Title:<%= link_to product.title, product_path(product)  %></p>
+    <p>Description: <%= product.description%></p>
+    <p>Price: <%= product.price%>€</p>
+  </div>
+  <% end %>
+</div>

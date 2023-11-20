@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  skip_before_action :authenticate_user!, only: [:show]
 
-  before_action :set_product_params [:index, :show, :create, :destroy]
-  before_action :set_user_params [:index, :new, :create, :destroy]
+  before_action :set_product_params, only: [:index, :show, :create, :edit, :update, :destroy]
+  before_action :set_user_params, only: [:index, :new, :create, :edit, :update, :destroy]
+
 
   # Si je suis connecté, je peux voir tous mes products à moi (mes annonces)
+  # Déjà fait dans le pages#home non ?
   def index
-    @user = current_user
     @products = @user.products
   end
 
@@ -21,14 +22,25 @@ class ProductsController < ApplicationController
 
   # Pour créer un produit je dois être connecté -> j'embarque user_id
   def create
-    @user = current_user
     @product = Product.new(product_params)
-    @product.user.user_id = @user.id
+    @product.user = @user
     @product.save!
-    redirect_to user_products_path(@user)
+    redirect_to user_products_path(@product.user)
   end
 
-  # Pour supprimer un produit j'ai besoin d'être connecté -> redirection vers la liste des produits de l'utilisateur connecté
+  def edit
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to user_products_path(@product.user), notice: 'Product was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  # Pour supprimer un produit j'ai besoin d'être connecté
+  #-> redirection vers la liste des produits de l'utilisateur connecté
   def destroy
     @product.destroy
     redirect_to #TO DO , status: :see_other
@@ -37,14 +49,15 @@ class ProductsController < ApplicationController
   private
 
   def set_product_params
-    @product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def set_user_params
-    @user.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = current_user
   end
 
   def product_params
-    params.require(:product).permit(title:, description:, price:, user_id:)
+    params.require(:product).permit(title:, description:, price:, user_id:, photos: [])
   end
 end
