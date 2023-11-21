@@ -11,6 +11,16 @@
   </head>
 
   <body>
+   <div class="d-flex justify-content-between">
+  <div>
+    <%= link_to "Home", root_path %>
+  </div>
+  <div>
+    <%= link_to "Sign-in", new_user_session_path %>
+    <%= link_to "Sign-out", destroy_user_session_path %>
+  </div>
+</div>
+
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
     <%= yield %>
