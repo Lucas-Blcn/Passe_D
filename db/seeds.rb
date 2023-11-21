@@ -14,23 +14,30 @@ Product.destroy_all
 User.destroy_all
 
 # Création de 5 utilisateurs
+# users = ["AlainleGeudin", "Mathieulepeureux", "Omarlefroussard", "Antoninleradin", "Sarahlafada", "Bernadettelamalhônette"]
+users_for_test = ["AlainleGeudin", "Mathieulepeureux", "Omarlefroussard", "Antoninleradin", "Sarahlafada", "Bernadettelamalhônette"]
 users = []
+puts "Création des users"
 5.times do |i|
   users << User.create!(
-    email: "user#{i + 1}@example.com",
+    email: "user#{i+1}#{users_for_test[i+1]}@example.com",
     password: "password",
-    pseudo: "User #{i + 1}",
+    # pseudo: "User #{i + 1}",
+    pseudo: "#{users_for_test[i+1]}",
     phone_number: "123456789#{i}"
   )
 end
+puts "#Users: #{users}"
 
 # Création de 5 produits pour chaque utilisateur
+products_for_test = ["cycling bike", "surfboard", "ping-pong", "triplette", "paddleboard", "swim gear", "VTT", "motobike", "water skiing", "snowboard", "skiing"]
 products = []
 users.each do |user|
   5.times do |i|
     products << user.products.create!(
-      title: "Product #{i + 1} by #{user.pseudo}",
-      description: "Description for Product #{i + 1}",
+      # title: "Product by #{user.pseudo}",
+      title: "My wonderful #{products_for_test[rand(0..11)]} - #{user.pseudo}",
+      description: "This is my description for the above product #{i + 1}",
       price: rand(10..100)
     )
   end
