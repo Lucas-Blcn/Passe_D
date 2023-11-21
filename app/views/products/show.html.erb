@@ -1,4 +1,8 @@
 <h1>JE SUIS LA SHOW DU PRODUCT <%= @product.title %></h1>
 <h2>Je m'affiche même si je ne suis pas connecté</h2>
 
-<%= render "form_booking" %>
+<% if user_signed_in? %>
+  <%= render "form_booking" %>
+<% else %>
+  <%= link_to "Réservé", new_user_session_path %>
+<% end %>
