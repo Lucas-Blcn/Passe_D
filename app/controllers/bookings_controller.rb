@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @product = Product.find(params[:product_id])
     @booking.product = @product
     if @booking.save!
+      @booking.transaction_booked = true
       redirect_to product_path(@product)
     else
       render "products/show", status: :unprocessable_entity
