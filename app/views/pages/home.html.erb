@@ -1,11 +1,12 @@
-<div class="container text-center">
+<div class="container text-center bg-white">
   <h1 class="text-center">Pages#home</h1>
   <h2 class="text-center">All our products</h2>
-
-  <div class="row row-cols-1 row-cols-lg-2 g-4 row gy-10">
+..
+  <div class="row row-cols-1 row-cols-lg-2 g-4">
   <% @products.each do |product| %>
+  <%= link to%>
   <div class="shadow-sm border rounded p-3 lg-6 text-center">
-  <img src="..." class="card-img-top" alt="...">
+   <%= image_tag(product., class: 'card-img-top', alt: 'Product Image') if product.photos.present? %>
   <div class="card-body">
     <h3><p>Title:<%= link_to product.title, product_path(product)  %></p></h3>
     <p>Description: <%= product.description%></p>
