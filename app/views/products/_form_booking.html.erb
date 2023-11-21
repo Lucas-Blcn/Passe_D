@@ -1,7 +1,8 @@
 
-<%= simple_form_for([@user, @booking], html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_form_for([@product, @booking], html: { class: 'form-horizontal' }) do |f| %>
   <%= f.input :starting_date, as: :date, html5: true, input_html: { class: 'form-control' } %>
   <%= f.input :ending_date, as: :date, html5: true, input_html: { class: 'form-control' } %>
 
   <%=f.button :submit, class: 'btn btn-primary' %>
+  
 <% end %>

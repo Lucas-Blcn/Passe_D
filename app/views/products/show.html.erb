@@ -4,19 +4,8 @@
 <%# Carousel %>
 <%= render 'shared/carousel', title: @product.title %>
 
-<div>
 <%# Description Produit %>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
-</div>
-
-<%# Nom du produit %>
-<h1><%= @product.title %></h1>
-
-<%# Carousel %>
-<%= render 'shared/carousel', title: @product.title %>
-
 <div>
-<!-- Description produit -->
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
 </div>
 
@@ -28,12 +17,6 @@
 <% if user_signed_in? %>
   <%= render "form_booking" %>
 <% else %>
-
-  <%= link_to "Réservé", new_user_session_path %>
-<% if user_signed_in? %>
-  <%= render "form_booking" %>
-<% else %>
-
   <%= link_to "Booked", new_user_session_path %>
 <% end %>
 
