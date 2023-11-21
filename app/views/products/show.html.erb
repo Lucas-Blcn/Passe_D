@@ -5,9 +5,10 @@
 <%= render 'shared/carousel', title: @product.title %>
 
 <div>
-  <%# Description Produit %>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
-</div>
+
+<%# Description Produit %>
+<%= @product.description %>
+
 
 <%# renvoie le formulaire de réservation si l'on est connecté %>
 
@@ -26,6 +27,7 @@
 <% end %>
 
 
+<%# Affichage des photos du nouveau produit %>
 <% @product.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
-  before_action :set_product_params, only: %i[index show create edit update destroy]
+  before_action :set_product_params, only: %i[index show edit update destroy]
   before_action :set_user_params, only: %i[index new create edit update destroy show]
 
   # Si je suis connecté, je peux voir tous mes products à moi (mes annonces)
@@ -25,9 +25,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user = @user
-    @product.save!
-    console.log("produit")
-    redirect_to user_products_path(@product.user)
+    if @product.save!
+      redirect_to product_path(@product)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
