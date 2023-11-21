@@ -6,7 +6,7 @@
 
 <div>
 <%# Description Produit %>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
+<%= @product.description %>
 </div>
 
 <% if user_signed_in? %>
@@ -16,6 +16,7 @@
 <% end %>
 
 
+<%# Affichage des photos du nouveau produit %>
 <% @product.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
