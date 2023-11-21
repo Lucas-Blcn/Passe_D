@@ -1,8 +1,9 @@
-<h1>JE SUIS LA SHOW DU PRODUCT <%= @product.title %></h1>
+<h1><%= @product.title %></h1>
 <h2>Je m'affiche même si je ne suis pas connecté</h2>
 
 <%# Nom du produit %>
 <h1><%= @product.title %></h1>
+
 <%# Carousel %>
 <%= render 'shared/carousel', title: @product.title %>
 
@@ -20,4 +21,13 @@
   <%= render "form_booking" %>
 <% else %>
   <%= link_to "Réservé", new_user_session_path %>
+<% if user_signed_in? %>
+  <%= render "form_booking" %>
+<% else %>
+  <%= link_to "Booked", new_user_session_path %>
+<% end %>
+
+
+<% @product.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>

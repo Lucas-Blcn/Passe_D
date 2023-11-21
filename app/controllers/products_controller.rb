@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = @user
     @product.save!
+    console.log("produit")
     redirect_to user_products_path(@product.user)
   end
 

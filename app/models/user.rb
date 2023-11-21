@@ -7,5 +7,6 @@ class User < ApplicationRecord
   # validates :pseudo, presence: true
   # validates :phone_number, format: { with: /\A(\+33\s?|0)[67]\s?\d{2}(\s?\d{2}){3}\z/, message: "Le format du numéro de téléphone français n'est pas valide" }
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable
+  #  , :validatable
 end
