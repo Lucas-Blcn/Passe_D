@@ -1,7 +1,0 @@
-  <%= simple_form_for(@user, @product) do |f| %>
-   <%= f.input :title, placeholder: "Ex: Bike to eat the road, Jack !" %>
-   <%= f.input :description, placeholder: 'tell us more about your product' %>
-   <%= f.input :price %>
-   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-   <%=f.button :button%>
- <% end %>
