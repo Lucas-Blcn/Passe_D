@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
-  before_action :set_product_params, only: [:index, :show, :create, :edit, :update, :destroy]
-  before_action :set_user_params, only: [:index, :new, :create, :edit, :update, :destroy]
-
+  before_action :set_product_params, only: %i[index show create edit update destroy]
+  before_action :set_user_params, only: %i[index new create edit update destroy show]
 
   # Si je suis connecté, je peux voir tous mes products à moi (mes annonces)
   # Déjà fait dans le pages#home non ?
@@ -13,6 +12,7 @@ class ProductsController < ApplicationController
 
   # Je peux voir le détail d'une annonce sans être connecté
   def show
+    @booking = Booking.new
   end
 
   # Pour créer un produit je dois être connecté -> j'embarque user_id
@@ -40,10 +40,10 @@ class ProductsController < ApplicationController
   end
 
   # Pour supprimer un produit j'ai besoin d'être connecté
-  #-> redirection vers la liste des produits de l'utilisateur connecté
+  # -> redirection vers la liste des produits de l'utilisateur connecté
   def destroy
     @product.destroy
-    redirect_to #TO DO , status: :see_other
+    redirect_to # TO DO , status: :see_other
   end
 
   private
@@ -58,6 +58,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(title:, description:, price:, user_id:, photos: [])
+    params.require(:product).permit(:title, :description, :price, :user_id, photos: [])
   end
 end
