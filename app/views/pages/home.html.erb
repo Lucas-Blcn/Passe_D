@@ -4,15 +4,16 @@
 ..
   <div class="row row-cols-1 row-cols-lg-2 g-4">
   <% @products.each do |product| %>
-  <%= link to%>
-  <div class="shadow-sm border rounded p-3 lg-6 text-center">
-   <%= image_tag(product., class: 'card-img-top', alt: 'Product Image') if product.photos.present? %>
-  <div class="card-body">
-    <h3><p>Title:<%= link_to product.title, product_path(product)  %></p></h3>
-    <p>Description: <%= product.description%></p>
-    <p>Price: <%= product.price%>€</p>
-    </div>
+  <%= link_to product_path(product) do %>
+    <div class="shadow-sm border rounded p-3 lg-6 text-center position-relative">
+      <%= image_tag("bike/biking_hat.jpg", class: 'card-img-top', alt: 'Product Image')%>
+     <div class="card-body">
+    <h3 class="mt-4"><%= product.title %></h3>
+    <%= product.description%>
+     <p class="position-absolute bottom-0 end-0 p-3">Price: <%= product.price %>€</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-<% end %>
-</div>
 </div>
