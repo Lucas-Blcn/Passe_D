@@ -1,2 +1,9 @@
-<h1>JE SUIS LA SHOW DU PRODUCT <%= @product.title %></h1>
-<h2>Je m'affiche même si je ne suis pas connecté</h2>
+<%# Nom du produit %>
+<h1><%= @product.title %></h1>
+<%# Carousel %>
+<%= render 'shared/carousel', title: @product.title %>
+
+<div>
+<%# Description Produit %>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
+</div>
