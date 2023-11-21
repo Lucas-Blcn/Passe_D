@@ -9,4 +9,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
   #  , :validatable
+
+  def products_through_bookings
+    Product.joins(:bookings).where(bookings: { user_id: id })
+  end
 end

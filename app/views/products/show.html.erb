@@ -5,14 +5,23 @@
 <%= render 'shared/carousel', title: @product.title %>
 
 <div>
-<%# Description Produit %>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
+  <%# Description Produit %>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dolore. Doloribus quas aut vitae consectetur perferendis blanditiis aperiam veritatis, ipsam tempore voluptates? Quas corrupti accusantium minus, consectetur atque deleniti odit.</p>
 </div>
 
+<%# renvoie le formulaire de réservation si l'on est connecté %>
 <% if user_signed_in? %>
-  <%= render "form_booking" %>
+  <% if @booked %>
+    <p>FINISHED</p>
+  <% else %>
+    <%= render "form_booking" %>
+  <% end %>
+
+  <%# check si il y a déjà une réservation de faite par l'utilisateur %>
+
+<%# si l'on est pas connecté affiche un lien vers le new user %>
 <% else %>
-  <%= link_to "Booked", new_user_session_path %>
+  <%= link_to "Book this product", new_user_session_path %>
 <% end %>
 
 

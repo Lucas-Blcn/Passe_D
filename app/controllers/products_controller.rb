@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   # Je peux voir le détail d'une annonce sans être connecté
   def show
     @booking = Booking.new
+    @booked =  current_user.products_through_bookings.exists?(@product.id)
   end
 
   # Pour créer un produit je dois être connecté -> j'embarque user_id
@@ -38,6 +39,10 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def booked?
+
   end
 
   # Pour supprimer un produit j'ai besoin d'être connecté
