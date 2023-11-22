@@ -1,3 +1,5 @@
+<%# Message d'accueil user %>
+
 <div class="container text-center bg-white mb-5">
   <div class="pt-4">
     <% if user_signed_in? %>
@@ -21,6 +23,8 @@
     <% end %>
   </div>
 
+  <%# Cards home page %>
+  
   <div class="row row-cols-1 row-cols-lg-2 g-4">
     <% @products.each do |product| %>
     <%= link_to product_path(product), class:"text-decoration-none" do %>
@@ -35,11 +39,6 @@
         <h3 class="mt-4" style="color: black;"><%= product.title %></h3>
         <%# <%= product.description%>
       </div>
-
-    <%# <div class="card-body"> %>
-     <%# <div class="position-absolute p-3" style="right:10px; bottom:10px"> %>
-          <%# </div> %>
-        <%# </div> %>
       <% end %>
     <% end %>
   </div>
