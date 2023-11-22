@@ -1,6 +1,6 @@
 <%# Message d'accueil user %>
 
-<div class="container text-center bg-white mb-5">
+<div class="container text-center mb-5">
   <div class="pt-4">
     <% if user_signed_in? %>
       <div class="d-flex justify-content-center">
@@ -13,17 +13,18 @@
       <p class="text-center">All these <%=Product.count%> gears are waiting for you</p>
     <% end %>
   </div>
+</div>
 
   <%# Cards home page %>
 
   <div class="row row-cols-1 row-cols-lg-2 g-4">
     <% @products.each do |product| %>
     <%= link_to product_path(product), class:"text-decoration-none" do %>
-      <div class="shadow-sm rounded-4 p-3 lg-6 text-center">
+      <div class="shadow-sm rounded-4 p-3 lg-6 text-center bg-light mb-3 ">
 
         <div>
           <%= image_tag("bike/biking_hat.jpg", class: 'card-img-top rounded-4', alt: 'Product Image')%>
-          <div class=" d-flex justify-content-between" style="right:10px; bottom:10px; background-color: white; border-radius: 50px; padding: 8px; color:#3e3434;font-size: 20px;font-weight: bold;">
+          <div class=" d-flex justify-content-between" style="border-radius: 50px; padding: 8px; color:#3e3434;font-size: 20px;font-weight: bold;">
             <div><%= product.title %></div>
               <div><%= product.price %>€</div>
             </div>
@@ -34,4 +35,5 @@
       <% end %>
     <% end %>
   </div>
-</div>
+
+<%# </div> %>
