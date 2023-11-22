@@ -3,6 +3,7 @@ h1 {
   font-size: 30px;
   margin-bottom: 3rem;
   color: $sombre;
+  position: relative;
 }
 
 .header-secondary,
@@ -20,4 +21,22 @@ h4,
 h5,
 h6 {
   text-transform: uppercase;
+}
+
+.highlight-green {
+  background-color: $green;
+  position: absolute;
+  width: 180px;
+  height: 18px;
+  left: 33%;
+  top: 120px;
+}
+
+.highlight-green-transparent {
+  background-color: $green-faded;
+  position: absolute;
+  width: 180px;
+  height: 18px;
+  left: 33%;
+  top: 120px;
 }
