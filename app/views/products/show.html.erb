@@ -1,8 +1,10 @@
 <%# Nom du produit %>
   <h1 class="header mx-3" ><%= @product.title %></h1>
 
-  <%# Carousel %>
-  <%= render 'shared/carousel', title: @product.title %>
+<%# Image produit %>
+<div>
+  <%= image_tag("bike/biking_hat.jpg", class: 'd-block w-100', style: 'height: 25;', alt: 'Image bike')%>
+</div>
 
 
 
