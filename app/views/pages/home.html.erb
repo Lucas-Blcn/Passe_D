@@ -3,12 +3,9 @@
 <div class="container text-center bg-white mb-5">
   <div class="pt-4">
     <% if user_signed_in? %>
-      <div class="text-center">
-        <div class="fit-content">
-          <div class="highlight-green-transparent z-2"></div>
-          <h1 class="text-center header z-1">Hi <%=current_user.pseudo %></h1>
-          <div class="highlight-green"></div>
-        </div>
+      <div class="d-flex justify-content-center">
+        <% @newTitle = "Hi #{current_user.pseudo}" %>
+        <%= render "layouts/header" %>
       </div>
       <p class="text-center">All these <%=Product.count%> gears are waiting for you</p>
     <% else %>
