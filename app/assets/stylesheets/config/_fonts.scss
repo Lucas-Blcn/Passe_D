@@ -6,9 +6,25 @@
   font-weight: bold;
   font-style: italic;
 }
+
+@font-face {
+  font-family: "Helvetica Neue Light Oblique";
+  src: url("Helvetica Neue LT Std 53 Extended Oblique.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("Helvetica Neue LT Std 53 Extended Oblique.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Helvetica Neue", "sans-serif";
+$headers-secondary: "Helvetica Neue Light Oblique", "sans-serif";
+$font-heavy: "Helvetica Neue Light", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 
