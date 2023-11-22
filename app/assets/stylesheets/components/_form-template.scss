@@ -1,14 +1,35 @@
 .form-template {
-  background-color: $gris;
+  background-color: $gris-fonce;
+  padding: 15px;
 
   textarea,
-  label {
+  label,
+  input {
     font-family: $font-heavy;
     color: $sombre;
+    text-transform: uppercase;
   }
 
-  textarea {
+  textarea,
+  input {
     border: none;
     border-bottom: 2px solid $sombre;
+    color: $sombre-faded;
+  }
+}
+
+#btn-primary-form {
+  padding: 8px 25px;
+  color: $sombre;
+  border: 2px solid $green;
+  font-family: $headers-font;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $green;
+    transition: 0.3s;
   }
 }
