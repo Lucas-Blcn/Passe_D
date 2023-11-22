@@ -1,8 +1,38 @@
-<h2></h2>
+<div class="d-flex justify-content-center align-items-center">
+  <h2 class="background-barre mt-4 mb-3">Book this product</h2>
+</div>
 <%= simple_form_for([@product, @booking], html: { class: 'form-horizontal' }) do |f| %>
-  <%= f.input :starting_date, as: :date, html5: true, input_html: { class: 'form-control' } %>
-  <%= f.input :ending_date, as: :date, html5: true, input_html: { class: 'form-control' } %>
 
-  <%=f.button :submit, class: 'btn btn-primary' %>
+<div class="card_for_booking pb-5 mb-5">
+  <div class="d-flex container justify-content-center align-center">
+    <div style="border-radius: 40px 0px 0px 40px;background: #EFEBE9; width:190px; height:100px">
+      <%= f.input :starting_date,
+                  label_html: { class: 'd-block text-center' },
+                  class: 'text-center', # Pour centrer le contenu de l'input
+                  as: :string,
+                  # html5: true,
+                  input_html: { style: 'width: px;', data: { controller: 'datepicker' } }, # Largeur fixe de 150 pixels
+                  input_html: { data: { controller: "datepicker" } }%>
+    </div>
 
-<% end %>
+    <div style="border-radius: 0px 40px 40px 0px;background: #FFFBFA; ; width:190px; height:100px">
+      <%= f.input :ending_date,
+                  label_html: { class: 'd-block text-center' },
+                  class: 'text-center',
+                  as: :string,
+                  input_html: { style: 'width: px;', data: { controller: 'datepicker' } },
+                  input_html: { data: { controller: "datepicker" } }%>
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+      <p class="price-circle text-center "><%= @product.price %>€</p>
+    </div>
+
+  <div class="d-flex container justify-content-center align-center">
+    <%=f.button :submit, class: 'btn btn-primary' %>
+  </div>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,17 @@
+.background-barre {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  // padding: 10px; /* Espace intérieur du rectangle, ajustez selon vos besoins */
+}
+
+.background-barre::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #A2FFA0; /* Couleur de la barre d'arrière-plan */
+  z-index: -1; /* Pour placer le pseudo-élément en arrière du texte */
+}

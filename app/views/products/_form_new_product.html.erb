@@ -1,12 +1,14 @@
 <div class="container">
 
- <%= simple_form_for(@product) do |f| %>
-  <%= f.input :title, placeholder: "Ex: Bike to eat the road, Jack!" %>
-  <%= f.input :description, placeholder: 'Tell us more about your product' %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<div class="form-template">
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.input :title, placeholder: "Ex: Bike to eat the road, Jack!", class: "input-form" %>
+    <%= f.input :description, placeholder: 'Tell us more about your product', class: "input-form" %>
+    <%= f.input :price, class: "input-form" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "input-form" %>
+    <%= f.button :submit, class: "btn-outerlined", id: "btn-primary-form" %>
+  <% end %>
+</div>
 
 </div>
    <%# <%=f.button :button, class:"btn btn-primary"%>

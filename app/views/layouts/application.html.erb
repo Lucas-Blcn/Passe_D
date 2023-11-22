@@ -7,7 +7,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
@@ -27,8 +30,14 @@
       <%# Boutons sign %>
         <div class="d-flex gap-2">
           <% if user_signed_in? %>
+
             <%= link_to "New pass-D", new_product_path, class: "btn-sign btn-outerlined", style: "text-decoration: none;" %>
             <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-sign btn-logout' %>
+
+            <%= link_to "Create a post", new_product_path, class: "btn-outerlined", style: "text-decoration: none;" %>
+            <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-logout' %>
+            <%# <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "text-decoration: none;"%>
+
           <% else %>
            <%= button_to "Sign-in", new_user_session_path,class: "btn-sign btn-outerlined", style: "text-decoration: none;"%>
            <%= link_to "Sign-up", new_user_registration_path,class: "btn-sign btn-outerlined", style: "text-decoration: none;"%>
@@ -39,5 +48,6 @@
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
     <%= yield %>
+
   </body>
 </html>
