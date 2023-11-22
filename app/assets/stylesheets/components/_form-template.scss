@@ -1,0 +1,14 @@
+.form-template {
+  background-color: $gris;
+
+  textarea,
+  label {
+    font-family: $font-heavy;
+    color: $sombre;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 2px solid $sombre;
+  }
+}
