@@ -1,10 +1,22 @@
 <div class="container text-center bg-white mb-5">
   <div class="pt-4">
     <% if user_signed_in? %>
-      <h2 class="text-center">Hi <%=current_user.pseudo %></h2>
+      <div class="text-center">
+        <div class="highlight-green-transparent z-2" style="width: 180px;
+  height: 18px;
+  left: 33%;
+  top: 120px;"></div>
+
+        <h1 class="text-center header z-1">Hi <%=current_user.pseudo %></h1>
+        <div class="highlight-green" style="width: 180px;
+  height: 18px;
+  left: 33%;
+  top: 120px;"></div>
+
+      </div>
       <p class="text-center">All these <%=Product.count%> gears are waiting for you</p>
     <% else %>
-      <h2 class="text-center">Hi there!</h2>
+      <h1 class="text-center header">Hi there!</h1>
       <p class="text-center">All these <%=Product.count%> gears are waiting for you</p>
     <% end %>
   </div>
