@@ -7,20 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
     <%# <div class="container"> %>
     <nav class="my-nav">
       <div class="d-flex justify-content-between p-2 align-items-center my-nav">
-          <%# Bouton home %>
-          <%= link_to "Home", root_path, style: "text-decoration: none; color:#A2FFA0; font-size:22px;color:#A2FFA0;font-weight: bold;"%>
-
           <%# Logo %>
-        <div>
+        <div class="align-items-center">
           <a class="navbar-brand" href="#">
-          <%= image_tag "logo.svg",style:"width: 40px", class:"d-inline-block align-items-center" %>
+          <%= link_to image_tag("logo.svg", style: "width: 60px;"), root_path, class:"d-inline-block" %>
           </a>
         </div>
 
@@ -29,6 +29,10 @@
           <% if user_signed_in? %>
             <%= link_to "New pass-D", new_product_path, class: "btn-sign btn-outerlined", style: "text-decoration: none;" %>
             <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-sign btn-logout' %>
+
+            <%= link_to "Create a post", new_product_path, class: "btn-outerlined", style: "text-decoration: none;" %>
+            <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-logout' %>
+            <%# <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "text-decoration: none;"%>
           <% else %>
            <%= button_to "Sign-in", new_user_session_path,class: "btn-sign btn-outerlined", style: "text-decoration: none;"%>
            <%= link_to "Sign-up", new_user_registration_path,class: "btn-sign btn-outerlined", style: "text-decoration: none;"%>
@@ -39,5 +43,6 @@
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
     <%= yield %>
+
   </body>
 </html>
