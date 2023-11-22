@@ -17,13 +17,10 @@
     <%# <div class="container"> %>
     <nav class="my-nav">
       <div class="d-flex justify-content-between p-2 align-items-center my-nav">
-          <%# Bouton home %>
-          <%= link_to "Home", root_path, style: "text-decoration: none; color:#A2FFA0; font-size:22px;color:#A2FFA0;font-weight: bold;"%>
-
           <%# Logo %>
-        <div>
+        <div class="align-items-center">
           <a class="navbar-brand" href="#">
-          <%= image_tag "logo.svg",style:"width: 40px", class:"d-inline-block align-items-center" %>
+          <%= link_to image_tag("logo.svg", style: "width: 60px;"), root_path, class:"d-inline-block" %>
           </a>
         </div>
 
