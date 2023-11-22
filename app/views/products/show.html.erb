@@ -1,33 +1,33 @@
 <%# Nom du produit %>
-<h1 class="header mx-3" ><%= @product.title %></h1>
+  <h1 class="header mx-3" ><%= @product.title %></h1>
 
-<%# Carousel %>
-<%= render 'shared/carousel', title: @product.title %>
-
-<div>
-
-<%# Description Produit %>
-<p class="my-2"><%= @product.description %></p>
+  <%# Carousel %>
+  <%= render 'shared/carousel', title: @product.title %>
 
 
-<%# renvoie le formulaire de réservation si l'on est connecté %>
 
-<% if user_signed_in? %>
-  <% if @booked %>
-    <p>You are already booked in !</p>
+  <%# Description Produit %>
+  <p class="my-2"><%= @product.description %></p>
+
+
+  <%# renvoie le formulaire de réservation si l'on est connecté %>
+
+  <% if user_signed_in? %>
+    <% if @booked %>
+      <p>You are already booked in !</p>
+    <% else %>
+      <%= render "form_booking" %>
+    <% end %>
+
+    <%# check si il y a déjà une réservation de faite par l'utilisateur %>
+
+  <%# si l'on est pas connecté affiche un lien vers le new user %>
   <% else %>
-    <%= render "form_booking" %>
+    <p><%= link_to "Book this product", new_user_session_path, class:"btn btn-reservation" %></p>
   <% end %>
 
-  <%# check si il y a déjà une réservation de faite par l'utilisateur %>
 
-<%# si l'on est pas connecté affiche un lien vers le new user %>
-<% else %>
-  <p><%= link_to "Book this product", new_user_session_path, class:"btn btn-reservation" %></p>
-<% end %>
-
-
-<%# Affichage des photos du nouveau produit %>
-<% @product.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <%# Affichage des photos du nouveau produit %>
+  <% @product.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
