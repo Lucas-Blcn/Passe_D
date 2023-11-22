@@ -1,0 +1,15 @@
+.btn-outerlined {
+  padding: 8px 25px;
+  color: $sombre;
+  border: 2px solid $green;
+  font-family: $headers-font;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $green;
+    transition: 0.3s;
+  }
+}
