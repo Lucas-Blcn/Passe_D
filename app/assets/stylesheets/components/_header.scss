@@ -25,12 +25,21 @@ h6 {
 
 .highlight-green {
   background-color: $green;
+  width: 100%;
   position: absolute;
-  
+  height: 18px;
+  top: 18px;
 }
 
 .highlight-green-transparent {
   background-color: $green-faded;
+  width: 100%;
   position: absolute;
+  height: 18px;
+  top: 18px;
+}
 
+.fit-content {
+  width: fit-content;
+  position: relative;
 }
