@@ -1,7 +1,8 @@
 <div class="container text-center bg-white mb-5">
   <div class="pt-4">
     <% if user_signed_in? %>
-      <h2 class="text-center">Hi <%=current_user.pseudo %>! All these gears are wainting for you</h2>
+      <h2 class="text-center">Hi <%=current_user.pseudo %></h2>
+      <p class="text-center">All these <%=Product.count%> gears are wainting for you</p>
     <% else %>
       <h2 class="text-center">Hi there!</h2>
       <p class="text-center">All these <%=Product.count%> gears are wainting for you</p>

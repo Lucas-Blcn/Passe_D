@@ -45,9 +45,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def booked?
-  end
-
   # Pour supprimer un produit j'ai besoin d'être connecté
   # -> redirection vers la liste des produits de l'utilisateur connecté
   def destroy
