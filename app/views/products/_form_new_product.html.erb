@@ -4,7 +4,8 @@
   <%= simple_form_for(@product) do |f| %>
     <%= f.input :title, placeholder: "Ex: Bike to eat the road, Jack!", class: "input-form" %>
     <%= f.input :description, placeholder: 'Tell us more about your product', class: "input-form" %>
-    <%= f.input :price, class: "input-form" %>
+    <%= f.input :price, class: "input-form",
+                label: "Price per day (€/j)"%>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "input-form" %>
     <%= f.button :submit, class: "btn-outerlined", id: "btn-primary-form" %>
   <% end %>
