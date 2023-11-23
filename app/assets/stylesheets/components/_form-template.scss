@@ -2,12 +2,15 @@
   background-color: $gris-fonce;
   padding: 15px;
 
+  label {
+    text-transform: uppercase;
+  }
+
   textarea,
   label,
   input {
     font-family: $font-heavy;
     color: $sombre;
-    text-transform: uppercase;
   }
 
   textarea,
@@ -16,20 +19,23 @@
     border-bottom: 2px solid $sombre;
     color: $sombre-faded;
   }
-}
 
-#btn-primary-form {
-  padding: 8px 25px;
-  color: $sombre;
-  border: 2px solid $green;
-  font-family: $headers-font;
-  font-weight: bold;
-  font-style: italic;
-  text-decoration: none;
-  text-transform: uppercase;
+  .custom-btn-submit {
+    margin: 20px auto;
+    padding: 8px 25px;
+    color: $sombre;
+    font-size: 24px;
+    border: 2px solid $green;
+    font-family: $headers-font;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: white;
 
-  &:hover {
-    background-color: $green;
-    transition: 0.3s;
+    &:hover {
+      background-color: $green;
+      transition: 0.3s;
+    }
   }
 }
