@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
-  before_action :set_product_params, only: %i[index show edit update destroy]
+  before_action :set_product_params, only: %i[show edit update destroy]
   before_action :set_user_params, only: %i[index new create edit update destroy show]
 
   # Si je suis connecté, je peux voir tous mes products à moi (mes annonces)
-  # Déjà fait dans le pages#home non ?
   def index
-    @products = @user.products
+    if user_signed_in?
+      @products = current_user.products
+    end
   end
 
   # Je peux voir le détail d'une annonce sans être connecté
