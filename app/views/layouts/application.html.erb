@@ -53,9 +53,13 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <div class="mt-5">
-      <%= yield %>
+    <div class="not-mobile">
+      GET ON MOBILE NOW!
+    </div>
+    <div class="hide-on-desktop">
+      <div class="mt-5">
+        <%= yield %>
+      </div>
     </div>
 
     <%# JS Script %>
