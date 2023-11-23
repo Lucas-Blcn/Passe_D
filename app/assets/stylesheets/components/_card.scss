@@ -38,15 +38,20 @@
     line-height: 1.2rem;
   }
 
-  .price {
-    width: 20%;
-    color: $green;
-    height: 100%;
-    font-family: $headers-font;
-    font-size: 22px;
-    padding: 20px;
+  .price-container {
+    width: 80px;
+    margin-left: 20px;
+    padding-left: 20px;
     border-left: 1px solid $sombre;
-    text-shadow: 2px 2px 0 $sombre, -1px -1px 0 $sombre, 1px -1px 0 $sombre,
-      -1px 1px 0 $sombre, 1px 1px 0 $sombre;
+  }
+
+  .price {
+    font-size: 22px;
+    font-family: $headers-font;
+  }
+
+  .p-discret {
+    font-family: $headers-secondary;
+    font-size: 18px;
   }
 }
