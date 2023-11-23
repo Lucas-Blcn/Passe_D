@@ -1,14 +1,21 @@
 <%# Nom du produit %>
-<h1 class="header mx-3" ><%= @product.title %></h1>
+<div class="container">
+  <h1 class="header mx-3" ><%= @product.title %></h1>
+  <div class="d-flex flex-column">
+    <img src="https://images.unsplash.com/photo-1475666675596-cca2035b3d79?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img_fitted">
+    <%#= cl_image_tag @product.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <div class="d-flex w-100 justify-content-between py-2">
+      <img src="https://images.unsplash.com/photo-1475666675596-cca2035b3d79?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img_fitted" style="width: 30%;">
+      <img src="https://images.unsplash.com/photo-1475666675596-cca2035b3d79?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img_fitted" style="width: 30%;">
+      <img src="https://images.unsplash.com/photo-1475666675596-cca2035b3d79?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="img_fitted" style="width: 30%;">
+      <%#= cl_image_tag @product.photos.first.key, height: 100, crop: :fill %>
+      <%#= cl_image_tag @product.photos.first.key, height: 100, crop: :fill %>
+      <%#= cl_image_tag @product.photos.first.key, height: 100, crop: :fill %>
+    </div>
+  </div>
 
-<%# Carousel %>
-<%= render 'shared/carousel', title: @product.title %>
-
-<div>
-
-<%# Description Produit %>
+  <%# Description Produit %>
 <p class="my-2"><%= @product.description %></p>
-
 
 <%# renvoie le formulaire de réservation si l'on est connecté %>
 
@@ -31,3 +38,4 @@
 <% @product.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+</div>
