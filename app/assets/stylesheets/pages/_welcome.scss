@@ -1,0 +1,18 @@
+.banner {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* Imposta l'altezza al 100% della viewport height */
+  display: flex;
+  align-items: center; /* Allinea gli elementi verticalmente al centro */
+}
+
+/* Aggiungi stili se necessario per il testo o altri elementi */
+.mb-4{
+  color: #A2FFA0 ;
+}
+
+.btn-flat{
+  background-color: #A2FFA0;
+  border-radius: 40px;
+}
