@@ -9,7 +9,10 @@
       </div>
       <p class="text-center">All these <%=Product.count%> gears are waiting for you</p>
     <% else %>
-      <h1 class="text-center header">Hi there!</h1>
+      <div class="d-flex justify-content-center">
+        <% @newTitle = "Hi there" %>
+        <%= render "layouts/header" %>
+      </div>
       <p class="text-center">All these <%=Product.count%> gears are waiting for you</p>
     <% end %>
   </div>
