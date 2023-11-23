@@ -1,18 +1,16 @@
-<div class="container text-center mb-5">
+<div class="container text-center mb-5 pt-5">
 
    <div class="d-flex justify-content-center">
         <% @newTitle = "My Posts" %>
         <%= render "layouts/header" %>
       </div>
 
-
-
   <%# Cards home page %>
 
   <div class="row row-cols-1 row-cols-lg-2 g-4">
     <% @products.each do |product| %>
     <%= link_to product_path(product), class:"text-decoration-none" do %>
-      <div class="shadow-sm rounded-4 p-3 lg-6 text-center bg-light mb-3 ">
+      <div class="shadow-sm rounded-4 p-3 bg-light mb-3 ">
 
         <div>
           <%= image_tag("bike/biking_hat.jpg", class: 'card-img-top rounded-4', alt: 'Product Image')%>

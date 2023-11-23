@@ -27,9 +27,13 @@
   <%# renvoie le formulaire de réservation si l'on est connecté %>
 
   <% if user_signed_in? %>
-    <% if @booked %>
+    <% if current_user.products.include?(@product) %>
       <div class="mx-3">
-        <p>"You are already booked in !" </p>
+        <p>"It's your product!" </p>
+      </div>
+    <% elsif @booked %>
+      <div class="mx-3">
+        <p>"You already booked it !" </p>
       </div>
     <% else %>
       <%= render "form_booking" %>
