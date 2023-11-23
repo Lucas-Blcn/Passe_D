@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :welcome]
 
   # Je peux voir tous les produits proposés par la plateforme SANS être connecté
   def home
