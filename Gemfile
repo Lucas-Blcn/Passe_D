@@ -11,6 +11,7 @@ gem "dotenv-rails"
 # Enable using bootstrap
 gem "bootstrap", "~> 5.2"
 
+gem 'faker'
 
 # Enable to link our project to cloundinary to store images
 gem "cloudinary"

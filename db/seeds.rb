@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'open-uri'
 
 puts "1- Cleaning DataBase"
 Booking.destroy_all
@@ -15,33 +16,64 @@ User.destroy_all
 
 # Création de 5 utilisateurs
 # users = ["AlainleGeudin", "Mathieulepeureux", "Omarlefroussard", "Antoninleradin", "Sarahlafada", "Bernadettelamalhônette"]
-users_for_test = ["AlainleGeudin", "Mathieulepeureux", "Omarlefroussard", "Antoninleradin", "Sarahlafada", "Bernadettelamalhônette"]
+# users_for_test = ["AlainleGeudin", "Mathieulepeureux", "Omarlefroussard", "Antoninleradin", "Sarahlafada", "Bernadettelamalhônette"]
 users = []
-puts "Création des users"
-5.times do |i|
+
+puts "2- Création des users"
   users << User.create!(
-    email: "user#{i+1}#{users_for_test[i+1]}@example.com",
+    email: "test@test.com",
     password: "password",
-    # pseudo: "User #{i + 1}",
-    pseudo: "#{users_for_test[i+1]}",
-    phone_number: "123456789#{i}"
+    pseudo: "Benoit#1410",
+    phone_number: "0649480923"
   )
-end
+
+  4.times do
+    users << User.create!(
+      email: Faker::Internet.email,
+      password: Faker::Internet.password(min_length: 8),
+      pseudo: Faker::Internet.username(specifier: 5..12),
+      phone_number: Faker::PhoneNumber.cell_phone_in_e164
+    )
+  end
+
+# 5.times do |i|
+#   users << User.create!(
+#     email: "user#{i+1}#{users_for_test[i+1]}@example.com",
+#     password: "password",
+#     # pseudo: "User #{i + 1}",
+#     pseudo: "#{users_for_test[i+1]}",
+#     phone_number: "123456789#{i}"
+#   )
+# end
+
 puts "#Users: #{users}"
 
 # Création de 5 produits pour chaque utilisateur
-products_for_test = ["cycling bike", "surfboard", "ping-pong", "triplette", "paddleboard", "swim gear", "VTT", "motobike", "water skiing", "snowboard", "skiing"]
+products_for_test = ["cycling bike", "surfboard", "ping-pong", "triplette", "paddleboard", "swim gear", "VTT", "motorbike", "water skiing", "snowboard", "skiing"]
+title_for_test = ["wonderful", "amazing", "old but ready to use", "never used", "fantastic", "beautiful"]
 products = []
 users.each do |user|
-  5.times do |i|
+  4.times do
+    the_product = products_for_test[rand(0..10)]
     products << user.products.create!(
-      # title: "Product by #{user.pseudo}",
-      title: "My wonderful #{products_for_test[rand(0..11)]} - #{user.pseudo}",
-      description: "This is my description for the above product #{i + 1}",
-      price: rand(10..100)
+      title: "My #{the_product}",
+      # description: "This #{title_for_test} #{the_product} is ",
+      description: "Je vous propose mon matériel à la location pour la durée qu'il vous plaira. De bonne qualité, vous pourrez découvrir les joies du #{the_product} sans vous ruinez.",
+      price: rand(5..60)
     )
   end
 end
+
+# users.each do |user|
+#   5.times do |i|
+#     products << user.products.create!(
+#       # title: "Product by #{user.pseudo}",
+#       title: "My wonderful #{products_for_test[rand(0..11)]} - #{user.pseudo}",
+#       description: "This is my description for the above product #{i + 1}",
+#       price: rand(10..100)
+#     )
+#   end
+# end
 
 # Création de 5 réservations pour chaque utilisateur et produit
 bookings = []
