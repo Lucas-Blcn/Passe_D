@@ -6,6 +6,8 @@ export default class extends Controller {
 
   connect() {
     this.initializeEndDatePicker();
+    this.originalPrice = parseFloat(this.productPriceTarget.textContent.replace('€/j', ''));
+
   }
 
   initializeEndDatePicker() {
@@ -19,18 +21,26 @@ export default class extends Controller {
   }
 
   updatePrice() {
+      this.setNewPrice(this.originalPrice);
     // Mettre le prix de la location à jour
+      // Remettre le prix à 0 quand on fait une nouvelle recherche
+      const initialPrice = this.productPriceTarget.textContent;
       // Connaître le nombre total de jour de location
       const numberOfDays = this.nbjour();
       // Connaître le prix du produit par jour
       const priceText = this.productPriceTarget.textContent;
       const priceValue = parseFloat(priceText.replace('€/j', ''));
       // Multiplier nb jour par le prix par jour
-      return ( `${numberOfDays}` * `${priceValue}€`);
-
-
+      const totalPrice = numberOfDays * priceValue;
+      // return ( `${numberOfDays * priceValue}€`);
+      this.setNewPrice(totalPrice);
   }
 
+  remindInitialPrice() {
+    const initialPriceText = this.productPriceTarget.textContent;
+    const initialPriceFloat = parseFloat(initialPriceText.replace('€/j', ''));
+    parseFloat(priceText.replace('€/j', ''));
+  }
   nbjour(){
     const element = document.getElementById("endingDate").value
       let arr = element.split(' to ');
@@ -53,6 +63,10 @@ export default class extends Controller {
         return 1;
       };
 
+  }
+
+  setNewPrice(totalPrice) {
+    this.productPriceTarget.textContent = `${totalPrice}€`;
   }
 
 
