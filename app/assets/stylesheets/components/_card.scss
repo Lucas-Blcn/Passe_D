@@ -8,8 +8,45 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.custom-card {
+  background-size: cover;
+  background-position: center;
+  background-color: $gris-fonce;
+  // border: 1px solid $sombre;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: $sombre;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 20px 0px rgba(62, 52, 52, 0.05);
+
+  img {
+    border: 1px solid $sombre;
+    border-radius: 5px;
+  }
+
+  .title {
+    font-family: $font-heavy;
+    padding-right: 20px;
+    line-height: 1.2rem;
+  }
+
+  .price {
+    width: 20%;
+    color: $green;
+    height: 100%;
+    font-family: $headers-font;
+    font-size: 22px;
+    padding: 20px;
+    border-left: 1px solid $sombre;
+    text-shadow: 2px 2px 0 $sombre, -1px -1px 0 $sombre, 1px -1px 0 $sombre,
+      -1px 1px 0 $sombre, 1px 1px 0 $sombre;
+  }
+}
