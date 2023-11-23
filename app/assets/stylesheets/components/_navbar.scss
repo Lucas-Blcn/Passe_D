@@ -12,6 +12,18 @@
 }
 
 .my-nav {
-  background-color: $blue-dark;
+  z-index: 3;
+  background-color: $gris-clair;
   align-items: center;
+  width: 100%;
+}
+
+.btn-navbar {
+  border: none;
+}
+
+.style-nav-link {
+  color: $sombre;
+  border-top: 1px solid $sombre;
+  font-family: $headers-secondary;
 }
