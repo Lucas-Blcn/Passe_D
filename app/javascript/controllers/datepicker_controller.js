@@ -41,6 +41,7 @@ export default class extends Controller {
     const initialPriceFloat = parseFloat(initialPriceText.replace('€/j', ''));
     parseFloat(priceText.replace('€/j', ''));
   }
+
   nbjour(){
     const element = document.getElementById("endingDate").value
       let arr = element.split(' to ');
@@ -67,6 +68,7 @@ export default class extends Controller {
 
   setNewPrice(totalPrice) {
     this.productPriceTarget.textContent = `${totalPrice}€`;
+
   }
 
 
