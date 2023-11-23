@@ -1,6 +1,9 @@
 <div class="container">
   <div class="mx-5">
-  <h2>Sign up</h2>
+  <div>
+      <% @newTitle = "Sign up" %>
+      <%= render "layouts/header" %>
+    <div>
   <div class="form-template">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>

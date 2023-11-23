@@ -1,5 +1,8 @@
 <%# Nom du produit %>
-  <h1 class="header mx-3" ><%= @product.title %></h1>
+  <div class="mx-5">
+    <% @newTitle = @product.title %>
+    <%= render "layouts/header" %>
+  </div>
 
 <%# Image produit %>
 <div>
@@ -16,7 +19,9 @@
 
   <% if user_signed_in? %>
     <% if @booked %>
-      <p>You are already booked in !</p>
+      <div class="mx-3">
+        <p>"You are already booked in !" </p>
+      </div>
     <% else %>
       <%= render "form_booking" %>
     <% end %>
