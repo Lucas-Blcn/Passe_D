@@ -45,7 +45,9 @@
 
   <%# si l'on est pas connecté affiche un lien vers le new user %>
   <% else %>
-    <p><%= link_to "Book this product", new_user_session_path, class:"btn btn-reservation" %></p>
+    <div class="text-center mt-5">
+      <%= link_to "Book this product", new_user_session_path, class:"btn-outerlined bg-white custom-shadow", style:"font-size: 22px;" %>
+    </div>
   <% end %>
 
 

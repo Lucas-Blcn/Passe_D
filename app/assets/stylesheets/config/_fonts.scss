@@ -28,4 +28,10 @@ $font-heavy: "Helvetica Neue Light", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 
-$my-font: "Font Name";
+.headers-secondary {
+  font-family: $headers-secondary;
+}
+
+.font-heavy {
+  font-family: $font-heavy;
+}
