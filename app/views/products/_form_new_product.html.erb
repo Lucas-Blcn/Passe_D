@@ -7,7 +7,9 @@
     <%= f.input :price, class: "input-form",
                 label: "Price per day (€/j)"%>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "input-form" %>
-    <%= f.button :submit, class: "btn-outerlined", id: "btn-primary-form" %>
+    <div class="text-center">
+      <%= f.button :submit, class: "custom-btn-submit" %>
+    </div>
   <% end %>
 </div>
 

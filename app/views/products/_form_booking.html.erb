@@ -5,6 +5,7 @@
   </div>
 </div>
 
+<div class="form-template">
 <%= simple_form_for [@product, @booking], html: { data: { controller: 'datepicker' }} do |f| %>
   <div class="card_for_booking pb-5 mb-5">
     <div class="d-flex container justify-content-center align-center">
@@ -30,7 +31,7 @@
     </div>
 
     <div class="d-flex container justify-content-center align-center">
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= f.button :submit, class: "custom-btn-submit" %>
     </div>
   </div>
 <% end %>
