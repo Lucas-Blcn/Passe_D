@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   # -> redirection vers la liste des produits de l'utilisateur connecté
   def destroy
     @product.destroy
-    redirect_to # TO DO , status: :see_other
+    redirect_to products_path , status: :see_other
   end
 
   private

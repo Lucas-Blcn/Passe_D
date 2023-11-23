@@ -1,5 +1,4 @@
 <%# Message d'accueil user %>
-
 <div class="container text-center mb-5">
   <div class="pt-4">
     <% if user_signed_in? %>
@@ -15,8 +14,20 @@
 
     <% end %>
     <div class="d-flex flex-column align-items-center w-100">
-      <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" >All these <%=Product.count%> gears</p>
-      <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" >are waiting for you !</p>
+      <% if @products.count === 1 %>
+        <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" > There is <%=@products.count%> gear</p>
+        <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" > waiting for you !</p>
+      <% elsif @products.count === 0 %>
+        <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;">
+          Sorry, we don't have any gears corresponding to your search.<br><br>
+          What about discovering one of them : <%Product.first(3).each do |product|%>
+            <p><%= product.title.split("My")[1]%></p>
+          <% end %>
+          </p>
+      <% else %>
+        <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" > There is <%=@products.count%> gear</p>
+        <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" > waiting for you !</p>
+      <% end %>
     </div>
   </div>
 </div>

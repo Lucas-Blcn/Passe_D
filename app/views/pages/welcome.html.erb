@@ -3,6 +3,21 @@
   <div class="container text-center text-white">
     <h1 class="mb-4">Welcome to Pass-D!</h1>
     <p class="mb-4">Break free from financial constraints and uncover the joy of new sport</p>
-    <%= link_to "Enter now", home_path, class:"btn btn-flat" %>
+    <%# <%= link_to "Enter now", home_path, class:"btn btn-flat" %>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: home_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Discover your new favorite sport, right here."
+          %>
+        <%= submit_tag "Search", name: "", class:"custom-btn-submit" %>
+      <% end %>
+    </div>
+  </div>
+
+
   </div>
 </div>
