@@ -4,7 +4,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params_booking)
+    dates = params_booking[:ending_date].split(" to ")
+    start_d = dates[0]
+    end_d = dates[1]
+    new_params = {starting_date: start_d, ending_date: end_d}
+    @booking = Booking.new(new_params)
     @booking.user = current_user
     @product = Product.find(params[:product_id])
     @booking.product = @product

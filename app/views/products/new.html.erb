@@ -1,14 +1,9 @@
 <div class="container">
   <div class="row mx-3">
-    <div class="highlight-green-transparent z-2" style="width: 295px;
-  height: 18px;
-  left: 30px;
-  top: 95px;"></div>
-    <h1 class="header z-1">Create a Pass-D</h1>
-    <div class="highlight-green" style="width: 295px;
-  height: 18px;
-  left: 30px;
-  top: 95px;"></div>
+    <div>
+      <% @newTitle = "Create a product" %>
+      <%= render "layouts/header" %>
+    <div>
     <h2 class="header-secondary">Time to give a second life to your sports gears</h2>
     <%= render 'form_new_product' %>
   </div>

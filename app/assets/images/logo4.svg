@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.35 93.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #add290;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: Cinematografica-Heavy, Cinematografica;
+        font-size: 56px;
+        font-weight: 800;
+        letter-spacing: .05em;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g>
+      <g>
+        <path class="cls-1" d="m60.94,72.62h22.47v11.08h-22.47v-11.08Z"/>
+        <path class="cls-1" d="m100.13,69.61h-1.56v16.33h1.56c1.8,0,3.26-1.46,3.26-3.26v-9.81c0-1.8-1.46-3.26-3.26-3.26Z"/>
+        <path class="cls-1" d="m92.46,62.7h-6.19v30.91h6.19c1.8,0,3.26-1.46,3.26-3.26v-24.39c0-1.8-1.46-3.26-3.26-3.26Z"/>
+        <path class="cls-1" d="m48.63,65.96v24.39c0,1.8,1.46,3.26,3.26,3.26h6.19v-30.91h-6.19c-1.8,0-3.26,1.46-3.26,3.26Z"/>
+        <path class="cls-1" d="m40.96,72.87v9.8c0,1.8,1.46,3.26,3.26,3.26h1.56v-16.33h-1.56c-1.8,0-3.26,1.46-3.26,3.26Z"/>
+      </g>
+      <text class="cls-2" transform="translate(7.18 47.6)"><tspan x="0" y="0">Pass-D</tspan></text>
+    </g>
+  </g>
+</svg>

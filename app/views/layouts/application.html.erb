@@ -20,7 +20,7 @@
           <%# Logo %>
         <div class="align-items-center">
           <a class="navbar-brand" href="#">
-          <%= link_to image_tag("logo.svg", style: "width: 60px;"), root_path, class:"d-inline-block" %>
+          <%= link_to image_tag("logo.svg", style: "width: 80px;"), root_path, class:"d-inline-block" %>
           </a>
         </div>
 
@@ -28,11 +28,8 @@
         <div class="d-flex gap-2">
           <% if user_signed_in? %>
 
-            <%= link_to "New pass-D", new_product_path, class: "btn-sign btn-outerlined", style: "text-decoration: none;" %>
-            <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-sign btn-logout' %>
-
             <%= link_to "Create a post", new_product_path, class: "btn-outerlined", style: "text-decoration: none;" %>
-            <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-logout' %>
+            <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'btn-sign' %>
             <%# <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "text-decoration: none;"%>
 
           <% else %>
