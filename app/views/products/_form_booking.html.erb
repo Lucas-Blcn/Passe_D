@@ -8,16 +8,22 @@
 
       <div style="border-radius: 0px 40px 40px 0px; background: #FFFBFA; width: 190px; height: 100px;">
         <%= f.input :ending_date,
-                    label: "Choose your date",
+                    label: "When do you need this product ?",
                     label_html: { class: 'd-block text-center' },
                     class: 'text-center',
                     as: :string,
-                    input_html: { data: { datepicker_target: 'endDateInput' } } %>
+                    input_html: {
+                      data: {
+                              datepicker_target: 'endDateInput',
+                              dynamic_price_target: 'endDateInput',
+                              action:"change->datepicker#updatePrice"},
+                    id:"endingDate"
+                              } %>
       </div>
     </div>
 
     <div class="d-flex justify-content-center align-items-center mt-3">
-      <p class="price-circle text-center "><%= @product.price %>€</p>
+      <p class="price-circle text-center" data-target="datepicker.productPrice"><%= @product.price %>€/j</p>
     </div>
 
     <div class="d-flex container justify-content-center align-center">
