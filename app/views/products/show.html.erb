@@ -29,6 +29,11 @@
 
   <%# Description Produit %>
 <p class="my-3 font-heavy ps-3 border-left"><%= @product.description %></p>
+<% if (current_user.pseudo == @product.user.pseudo) %>
+  <p class="my-3 headers-secondary text-end pe-3 p-3">By - you</p>
+<%  else %>
+  <p class="my-3 headers-secondary text-end pe-3">By - <%= @product.user.pseudo %></p>
+<% end %>
 
 </div>
 
@@ -36,16 +41,45 @@
 <%# renvoie le formulaire de réservation si l'on est connecté %>
 
   <%# renvoie le formulaire de réservation si l'on est connecté %>
-
   <% if user_signed_in? %>
     <% if current_user.products.include?(@product) %>
-      <div class="mx-3">
-        <p>"It's your product!" </p>
-      </div>
     <% elsif @booked %>
-      <div class="mx-3">
-        <p>"You already booked it !" </p>
+      <div class="d-flex text-align-center justify-content-center">
+         <% @newTitle = "your booking" %>
+        <%= render "layouts/header" %>
       </div>
+        <div class="ps-3">
+
+         <p class="ps-2 font-heavy">
+            <i class="fa-solid fa-at me-3"></i>
+            <%= @product.user.email %>
+          </p>
+
+          <p class="ps-2 font-heavy">
+            <i class="fa-solid fa-phone me-3"></i>
+            <%= @product.user.phone_number %>
+          </p>
+
+          <div class="d-flex align-items-center">
+            <div class="ps-2">
+              <p class="d-flex text-align-center justify-content-center">
+                <i class="fa-solid fa-calendar-days me-3"></i>
+              </p>
+            </div>
+            <div class="ps-2">
+              <p class=" font-heavy py-0 mb-0">
+                From : <%= @bookings.starting_date %>
+              </p>
+              <p class=" font-heavy py-0">
+                To : <%= @bookings.ending_date %>
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
     <% else %>
       <%= render "form_booking" %>
     <% end %>
