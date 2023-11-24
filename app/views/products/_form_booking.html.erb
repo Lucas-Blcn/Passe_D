@@ -1,19 +1,19 @@
 <div class="d-flex justify-content-center align-items-center">
-  <div class="mx-3">
+  <div class="mx-3 mt-5">
     <% @newTitle = "Book this product" %>
     <%= render "layouts/header" %>
   </div>
 </div>
 
-<div class="form-template">
+<div class="form-template pb-2">
 <%= simple_form_for [@product, @booking], html: { data: { controller: 'datepicker' }} do |f| %>
-  <div class="card_for_booking pb-5 mb-5">
+  <div class="card_for_booking mb-5">
     <div class="d-flex container justify-content-center align-center">
 
-      <div style="background: #FFFBFA; width: 500px; padding-top: 5%">
+      <div>
         <%= f.input :ending_date,
                     label: "When do you need this product ?",
-                    label_html: { class: 'd-block text-center' },
+                    label_html: { class: 'd-block text-center', style: "font-size: 18px; padding-bottom: 10px;" },
                     class: 'text-center ',
                     as: :string,
                     input_html: {
@@ -31,7 +31,7 @@
     </div>
 
     <div class="d-flex container justify-content-center align-center">
-      <%= f.button :submit, class: "custom-btn-submit" %>
+      <%= f.button :submit, class: "custom-btn-submit my-0 mt-3" %>
     </div>
   </div>
 <% end %>

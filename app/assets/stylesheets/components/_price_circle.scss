@@ -3,7 +3,10 @@
   height: 40px;
   padding: 12%;
   border-radius: 50%;
-  border: 1px solid #A2FFA0;
+  font-family: $headers-secondary;
+  font-size: 22px;
+  background-color: $green;
+  color: $sombre;
   display: flex;
   align-items: center;
   justify-content: center; /* Pour centrer horizontalement */
