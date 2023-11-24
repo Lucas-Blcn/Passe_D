@@ -7,11 +7,11 @@
 
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
-      <%= form_with url: home_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: home_path, method: :get, class: "d-flex search-bar-welcome px-3 mt-5" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
-              placeholder: "Discover your new favorite sport, right here."
+              class: "form-control search-query",
+              placeholder: "Discover your new favorite sport"
           %>
         <%= submit_tag "Search", name: "", class:"custom-btn-submit" %>
       <% end %>
