@@ -1,10 +1,15 @@
 .btn-reservation {
   border-radius: 40px;
-  background: var(--vert-fluo, #A2FFA0);
+  background: var(--vert-fluo, #a2ffa0);
 }
 
 .btn-logout {
-  background: var(--heavy, #3E3434);
+  background: var(--heavy, #3e3434);
   border-radius: 40px;
-  color: #A2FFA0 ;
+  color: #a2ffa0;
+}
+
+.btn-link {
+  color: $sombre;
+  text-decoration: underline;
 }
