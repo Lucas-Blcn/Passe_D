@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   def home
     @products = Product.all
     if params[:query].present?
-      @products = @products.where("title ILIKE ?", "%#{params[:query]}%")
+      @products = @products.where("title ILIKE ?", "%#{params[:query]}%").reverse
+
     end
   end
 
