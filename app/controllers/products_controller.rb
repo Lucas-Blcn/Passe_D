@@ -39,7 +39,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update(product_params)
+    if @product.save
+      @product.update(product_params)
       redirect_to user_products_path(@product.user), notice: 'Product was successfully updated.'
     else
       render :edit
@@ -49,8 +50,11 @@ class ProductsController < ApplicationController
   # Pour supprimer un produit j'ai besoin d'être connecté
   # -> redirection vers la liste des produits de l'utilisateur connecté
   def destroy
-    @product.destroy
-    redirect_to products_path , status: :see_other
+    if @product.destroy
+      redirect_to products_path, status: :see_other
+    else
+      render :edit
+    end
   end
 
   private

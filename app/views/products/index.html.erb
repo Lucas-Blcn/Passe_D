@@ -16,6 +16,14 @@
           <div class="position-relative">
             <% if product.photos.attached? %>
                <%= cl_image_tag product.photos[0].key, crop: :fill, class: "w-100 h-100", style: "object-fit: cover;" %>
+               <%# DELETE %>
+                <div>
+                  <p>
+                  <%= link_to product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Delete this post?' } do %>
+                    <i class="fas fa-trash" style="color:#efebe9 ; font-size: 24px; position: absolute; top: 10px; right: 10px;"></i>
+                  <% end %>
+                </p>
+                </div>
             <% else %>
               <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2tpfGVufDB8fDB8fHww"alt="" style="width: 100%; height: 100%; object-fit: cover;">
             <% end %>
