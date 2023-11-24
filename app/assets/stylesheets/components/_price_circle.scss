@@ -19,3 +19,11 @@
   position: relative;
   font-family: $font-heavy;
 }
+
+.logo {
+  color: $green;
+  text-shadow: 3px 3px 0 $sombre, -1px -1px 0 $sombre, 1px -1px 0 $sombre,
+    -1px 1px 0 $sombre, 1px 1px 0 $sombre;
+  font-size: 28px;
+  font-family: $headers-font;
+}
