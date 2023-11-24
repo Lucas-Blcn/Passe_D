@@ -49,7 +49,7 @@ puts "2- Création des users"
 puts "#Users: #{users}"
 
 # Création de 5 produits pour chaque utilisateur
-products_for_test = ["cycling bike", "surfboard", "ping-pong", "triplette", "paddleboard", "swim gear", "VTT", "motorbike", "water skiing", "snowboard", "skiing"]
+products_for_test = ["cycling bike", "surfboard", "hiking gear", "triplette", "paddleboard", "swim gear", "VTT", "longboard", "water skiing", "snowboard", "skis"]
 title_for_test = ["wonderful", "amazing", "old but ready to use", "never used", "fantastic", "beautiful"]
 products = []
 users.each do |user|
