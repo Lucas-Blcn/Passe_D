@@ -42,7 +42,7 @@
     width: 80px;
     margin-left: 20px;
     padding-left: 20px;
-    border-left: 1px solid $sombre;
+    border-left: 2px solid $sombre;
   }
 
   .price {
@@ -54,4 +54,22 @@
     font-family: $headers-secondary;
     font-size: 18px;
   }
+}
+
+.highlight-green-2 {
+  background-color: $green;
+  width: calc(100% + 16px);
+  position: absolute;
+  height: 10px;
+  top: 12px;
+  left: -8px;
+}
+
+.highlight-green-transparent-2 {
+  background-color: $green-faded;
+  width: calc(100% + 16px);
+  position: absolute;
+  height: 10px;
+  top: 12px;
+  left: -8px;
 }
