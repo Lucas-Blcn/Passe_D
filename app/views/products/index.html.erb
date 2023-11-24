@@ -7,6 +7,9 @@
 
     <div class="d-flex flex-column align-items-center w-100">
       <p class="text-center font-heavy heavy-border-bottom mx-3" style="width: fit-content;" >All my <%=current_user.products.count%> posts</p>
+      <%= link_to new_product_path, class: "my-3" do %>
+        <i class="fa-solid fa-plus" style="color:#1a2035 ; font-size: 24px;"></i>
+      <% end %>
     </div>
 
   <div class="row">
