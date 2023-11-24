@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   # Je peux voir le détail d'une annonce sans être connecté
   def show
     @booking = Booking.new
+    @bookings = Booking.where(user: current_user, product: params[:id]).first
     if user_signed_in?
       @booked = current_user.products_through_bookings.exists?(@product.id)
     end
