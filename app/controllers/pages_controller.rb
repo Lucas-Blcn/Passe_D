@@ -3,10 +3,9 @@ class PagesController < ApplicationController
 
   # Je peux voir tous les produits proposés par la plateforme SANS être connecté
   def home
-    @products = Product.all
+    @products = Product.all.reverse
     if params[:query].present?
       @products = @products.where("title ILIKE ?", "%#{params[:query]}%").reverse
-
     end
   end
 
