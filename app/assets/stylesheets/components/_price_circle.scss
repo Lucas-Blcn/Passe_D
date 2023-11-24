@@ -11,3 +11,11 @@
   align-items: center;
   justify-content: center; /* Pour centrer horizontalement */
 }
+
+.price-date {
+  text-align: center;
+  font-size: 22px;
+  z-index: 1;
+  position: relative;
+  font-family: $font-heavy;
+}

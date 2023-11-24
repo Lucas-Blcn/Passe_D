@@ -27,7 +27,14 @@
     </div>
 
     <div class="d-flex justify-content-center align-items-center mt-3">
-      <p class="price-circle text-center" data-target="datepicker.productPrice"><%= @product.price %>€/j</p>
+        <div class="fit-content position-relative">
+          <div class="highlight-green-transparent-2 z-2"></div>
+          <div class="highlight-green-2 z-0"></div>
+          <div data-target="datepicker.productPrice">
+            <div class="price-date" data-target="datepicker.productPrice" style="font-size: 22px;"><%= @product.price %>€<span class="p-discret">/j</span></div>
+          </div>
+
+      </div>
     </div>
 
     <div class="d-flex container justify-content-center align-center">
