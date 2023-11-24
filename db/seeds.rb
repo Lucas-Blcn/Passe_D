@@ -59,7 +59,7 @@ users.each do |user|
       title: "My #{the_product}",
       # description: "This #{title_for_test} #{the_product} is ",
       description: "Je vous propose mon matériel à la location pour la durée qu'il vous plaira. De bonne qualité, vous pourrez découvrir les joies du #{the_product} sans vous ruinez.",
-      price: rand(5..60)
+      price: rand(5..25)
     )
   end
 end
@@ -76,20 +76,20 @@ end
 # end
 
 # Création de 5 réservations pour chaque utilisateur et produit
-bookings = []
-users.each do |user|
-  user.products.each do |product|
-    bookings << Booking.create!(
-      reviews: "Review for #{product.title} by #{user.pseudo}",
-      rating: rand(1..5),
-      transaction_booked: true,
-      starting_date: Date.today,
-      ending_date: Date.today + rand(1..30).days,
-      user: user,
-      product: product
-    )
-  end
-end
+# bookings = []
+# users.each do |user|
+#   user.products.each do |product|
+#     bookings << Booking.create!(
+#       reviews: "Review for #{product.title} by #{user.pseudo}",
+#       rating: rand(1..5),
+#       transaction_booked: true,
+#       starting_date: Date.today,
+#       ending_date: Date.today + rand(1..30).days,
+#       user: user,
+#       product: product
+#     )
+#   end
+# end
 
 puts "2- Creating users"
 
